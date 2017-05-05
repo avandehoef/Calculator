@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
-            this.textInvoer = new System.Windows.Forms.TextBox();
             this.textUitvoer = new System.Windows.Forms.TextBox();
             this.btnWortel = new System.Windows.Forms.Button();
             this.btnPlusMin = new System.Windows.Forms.Button();
@@ -52,17 +51,15 @@
             this.btnGedeeldDoor = new System.Windows.Forms.Button();
             this.btnKwadraat = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnMemoryMinus = new System.Windows.Forms.Button();
+            this.btnMemoryPlus = new System.Windows.Forms.Button();
+            this.btnMemoryStore = new System.Windows.Forms.Button();
+            this.btnMemoryClear = new System.Windows.Forms.Button();
+            this.btnFactorial = new System.Windows.Forms.Button();
+            this.btnEuroTeken = new System.Windows.Forms.Button();
+            this.btnMemoryRecall = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textInvoer
-            // 
-            this.textInvoer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textInvoer.Font = new System.Drawing.Font("Calibri", 12F);
-            this.textInvoer.Location = new System.Drawing.Point(46, 367);
-            this.textInvoer.Multiline = true;
-            this.textInvoer.Name = "textInvoer";
-            this.textInvoer.Size = new System.Drawing.Size(282, 45);
-            this.textInvoer.TabIndex = 59;
             // 
             // textUitvoer
             // 
@@ -70,7 +67,7 @@
             this.textUitvoer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUitvoer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textUitvoer.Enabled = false;
-            this.textUitvoer.Font = new System.Drawing.Font("Calibri", 14F);
+            this.textUitvoer.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUitvoer.Location = new System.Drawing.Point(46, 35);
             this.textUitvoer.Multiline = true;
             this.textUitvoer.Name = "textUitvoer";
@@ -90,7 +87,7 @@
             this.btnWortel.TabIndex = 57;
             this.btnWortel.Text = "√";
             this.btnWortel.UseVisualStyleBackColor = false;
-            this.btnWortel.Click += new System.EventHandler(this.btn_commando);
+            this.btnWortel.Click += new System.EventHandler(this.btn_commandoWortel);
             // 
             // btnPlusMin
             // 
@@ -106,12 +103,12 @@
             // 
             // btnIsAntwoord
             // 
-            this.btnIsAntwoord.BackColor = System.Drawing.Color.DarkGray;
-            this.btnIsAntwoord.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
-            this.btnIsAntwoord.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnIsAntwoord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnIsAntwoord.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.btnIsAntwoord.ForeColor = System.Drawing.Color.White;
             this.btnIsAntwoord.Location = new System.Drawing.Point(334, 367);
             this.btnIsAntwoord.Name = "btnIsAntwoord";
-            this.btnIsAntwoord.Size = new System.Drawing.Size(90, 45);
+            this.btnIsAntwoord.Size = new System.Drawing.Size(186, 45);
             this.btnIsAntwoord.TabIndex = 55;
             this.btnIsAntwoord.Text = "=";
             this.btnIsAntwoord.UseVisualStyleBackColor = false;
@@ -120,7 +117,7 @@
             // btnNul
             // 
             this.btnNul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNul.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNul.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNul.Location = new System.Drawing.Point(142, 316);
             this.btnNul.Name = "btnNul";
             this.btnNul.Size = new System.Drawing.Size(90, 45);
@@ -139,12 +136,12 @@
             this.btnKomma.TabIndex = 53;
             this.btnKomma.Text = ",";
             this.btnKomma.UseVisualStyleBackColor = false;
-            this.btnKomma.Click += new System.EventHandler(this.btn_click);
+            this.btnKomma.Click += new System.EventHandler(this.btn_click_komma);
             // 
             // btnDrie
             // 
             this.btnDrie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnDrie.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrie.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrie.Location = new System.Drawing.Point(238, 265);
             this.btnDrie.Name = "btnDrie";
             this.btnDrie.Size = new System.Drawing.Size(90, 45);
@@ -168,7 +165,7 @@
             // btnTwee
             // 
             this.btnTwee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnTwee.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTwee.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTwee.Location = new System.Drawing.Point(142, 265);
             this.btnTwee.Name = "btnTwee";
             this.btnTwee.Size = new System.Drawing.Size(90, 45);
@@ -180,7 +177,7 @@
             // btnEen
             // 
             this.btnEen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEen.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEen.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEen.Location = new System.Drawing.Point(46, 265);
             this.btnEen.Name = "btnEen";
             this.btnEen.Size = new System.Drawing.Size(90, 45);
@@ -192,7 +189,7 @@
             // btnZes
             // 
             this.btnZes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnZes.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZes.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZes.Location = new System.Drawing.Point(238, 214);
             this.btnZes.Name = "btnZes";
             this.btnZes.Size = new System.Drawing.Size(90, 45);
@@ -216,7 +213,7 @@
             // btnVijf
             // 
             this.btnVijf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnVijf.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVijf.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVijf.Location = new System.Drawing.Point(142, 214);
             this.btnVijf.Name = "btnVijf";
             this.btnVijf.Size = new System.Drawing.Size(90, 45);
@@ -228,7 +225,7 @@
             // btnVier
             // 
             this.btnVier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnVier.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVier.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVier.Location = new System.Drawing.Point(46, 214);
             this.btnVier.Name = "btnVier";
             this.btnVier.Size = new System.Drawing.Size(90, 45);
@@ -240,7 +237,7 @@
             // btnNegen
             // 
             this.btnNegen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNegen.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegen.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNegen.Location = new System.Drawing.Point(238, 163);
             this.btnNegen.Name = "btnNegen";
             this.btnNegen.Size = new System.Drawing.Size(90, 45);
@@ -264,7 +261,7 @@
             // btnAcht
             // 
             this.btnAcht.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAcht.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcht.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcht.Location = new System.Drawing.Point(142, 163);
             this.btnAcht.Name = "btnAcht";
             this.btnAcht.Size = new System.Drawing.Size(90, 45);
@@ -276,7 +273,7 @@
             // btnZeven
             // 
             this.btnZeven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnZeven.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZeven.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZeven.Location = new System.Drawing.Point(46, 163);
             this.btnZeven.Name = "btnZeven";
             this.btnZeven.Size = new System.Drawing.Size(90, 45);
@@ -295,7 +292,7 @@
             this.btnDerdeMacht.TabIndex = 40;
             this.btnDerdeMacht.Text = "x³";
             this.btnDerdeMacht.UseVisualStyleBackColor = false;
-            this.btnDerdeMacht.Click += new System.EventHandler(this.btn_commando);
+            this.btnDerdeMacht.Click += new System.EventHandler(this.btn_commandoDerdeMacht);
             // 
             // btnGedeeldDoor
             // 
@@ -319,7 +316,7 @@
             this.btnKwadraat.TabIndex = 38;
             this.btnKwadraat.Text = "x²";
             this.btnKwadraat.UseVisualStyleBackColor = false;
-            this.btnKwadraat.Click += new System.EventHandler(this.btn_commando);
+            this.btnKwadraat.Click += new System.EventHandler(this.btn_commandoKwadraat);
             // 
             // btnClear
             // 
@@ -333,12 +330,114 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.clear_click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Font = new System.Drawing.Font("Calibri", 11F);
+            this.button1.Location = new System.Drawing.Point(46, 367);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 45);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "π";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_commando_pi);
+            // 
+            // btnMemoryMinus
+            // 
+            this.btnMemoryMinus.BackColor = System.Drawing.Color.DimGray;
+            this.btnMemoryMinus.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryMinus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMemoryMinus.Location = new System.Drawing.Point(430, 265);
+            this.btnMemoryMinus.Name = "btnMemoryMinus";
+            this.btnMemoryMinus.Size = new System.Drawing.Size(90, 45);
+            this.btnMemoryMinus.TabIndex = 62;
+            this.btnMemoryMinus.Text = "M -";
+            this.btnMemoryMinus.UseVisualStyleBackColor = false;
+            // 
+            // btnMemoryPlus
+            // 
+            this.btnMemoryPlus.BackColor = System.Drawing.Color.DimGray;
+            this.btnMemoryPlus.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryPlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMemoryPlus.Location = new System.Drawing.Point(430, 315);
+            this.btnMemoryPlus.Name = "btnMemoryPlus";
+            this.btnMemoryPlus.Size = new System.Drawing.Size(90, 45);
+            this.btnMemoryPlus.TabIndex = 61;
+            this.btnMemoryPlus.Text = "M +";
+            this.btnMemoryPlus.UseVisualStyleBackColor = false;
+            // 
+            // btnMemoryStore
+            // 
+            this.btnMemoryStore.BackColor = System.Drawing.Color.DimGray;
+            this.btnMemoryStore.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMemoryStore.Location = new System.Drawing.Point(430, 163);
+            this.btnMemoryStore.Name = "btnMemoryStore";
+            this.btnMemoryStore.Size = new System.Drawing.Size(90, 45);
+            this.btnMemoryStore.TabIndex = 60;
+            this.btnMemoryStore.Text = "M Store";
+            this.btnMemoryStore.UseVisualStyleBackColor = false;
+            // 
+            // btnMemoryClear
+            // 
+            this.btnMemoryClear.BackColor = System.Drawing.Color.DimGray;
+            this.btnMemoryClear.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMemoryClear.Location = new System.Drawing.Point(430, 99);
+            this.btnMemoryClear.Name = "btnMemoryClear";
+            this.btnMemoryClear.Size = new System.Drawing.Size(90, 45);
+            this.btnMemoryClear.TabIndex = 65;
+            this.btnMemoryClear.Text = "M Clear";
+            this.btnMemoryClear.UseVisualStyleBackColor = false;
+            // 
+            // btnFactorial
+            // 
+            this.btnFactorial.BackColor = System.Drawing.Color.Silver;
+            this.btnFactorial.Font = new System.Drawing.Font("Calibri", 11F);
+            this.btnFactorial.Location = new System.Drawing.Point(142, 367);
+            this.btnFactorial.Name = "btnFactorial";
+            this.btnFactorial.Size = new System.Drawing.Size(90, 45);
+            this.btnFactorial.TabIndex = 66;
+            this.btnFactorial.Text = "1 / x";
+            this.btnFactorial.UseVisualStyleBackColor = false;
+            this.btnFactorial.Click += new System.EventHandler(this.btn_commando_een_gedeeld_door_x);
+            // 
+            // btnEuroTeken
+            // 
+            this.btnEuroTeken.BackColor = System.Drawing.Color.Silver;
+            this.btnEuroTeken.Font = new System.Drawing.Font("Calibri", 11F);
+            this.btnEuroTeken.Location = new System.Drawing.Point(238, 367);
+            this.btnEuroTeken.Name = "btnEuroTeken";
+            this.btnEuroTeken.Size = new System.Drawing.Size(90, 45);
+            this.btnEuroTeken.TabIndex = 67;
+            this.btnEuroTeken.Text = "€";
+            this.btnEuroTeken.UseVisualStyleBackColor = false;
+            // 
+            // btnMemoryRecall
+            // 
+            this.btnMemoryRecall.BackColor = System.Drawing.Color.DimGray;
+            this.btnMemoryRecall.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryRecall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMemoryRecall.Location = new System.Drawing.Point(430, 213);
+            this.btnMemoryRecall.Name = "btnMemoryRecall";
+            this.btnMemoryRecall.Size = new System.Drawing.Size(90, 45);
+            this.btnMemoryRecall.TabIndex = 68;
+            this.btnMemoryRecall.Text = "M Recall";
+            this.btnMemoryRecall.UseVisualStyleBackColor = false;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 446);
-            this.Controls.Add(this.textInvoer);
+            this.ClientSize = new System.Drawing.Size(565, 446);
+            this.Controls.Add(this.btnMemoryRecall);
+            this.Controls.Add(this.btnEuroTeken);
+            this.Controls.Add(this.btnFactorial);
+            this.Controls.Add(this.btnMemoryClear);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMemoryMinus);
+            this.Controls.Add(this.btnMemoryPlus);
+            this.Controls.Add(this.btnMemoryStore);
             this.Controls.Add(this.textUitvoer);
             this.Controls.Add(this.btnWortel);
             this.Controls.Add(this.btnPlusMin);
@@ -374,8 +473,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textInvoer;
         private System.Windows.Forms.TextBox textUitvoer;
         private System.Windows.Forms.Button btnWortel;
         private System.Windows.Forms.Button btnPlusMin;
@@ -398,6 +495,14 @@
         private System.Windows.Forms.Button btnGedeeldDoor;
         private System.Windows.Forms.Button btnKwadraat;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMemoryMinus;
+        private System.Windows.Forms.Button btnMemoryPlus;
+        private System.Windows.Forms.Button btnMemoryStore;
+        private System.Windows.Forms.Button btnMemoryClear;
+        private System.Windows.Forms.Button btnFactorial;
+        private System.Windows.Forms.Button btnEuroTeken;
+        private System.Windows.Forms.Button btnMemoryRecall;
     }
 }
 
