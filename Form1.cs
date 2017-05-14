@@ -54,6 +54,7 @@ namespace WindowsFormsApp6
         {
             Button button = (Button)sender;
             textUitvoer.Text = "0";
+            textUitvoerPrime.Text = "";
             resultaat = 0;
                 
         }
@@ -188,6 +189,115 @@ namespace WindowsFormsApp6
                     textUitvoer.Text = Convert.ToString(1 / resultaat);
                     break;
             }
+        }
+
+        private void btn_clickMemoryStore(object sender, EventArgs e)
+        {
+            if
+               ((textUitvoer.Text == "0") || (commandoUitgevoerd))
+                textUitvoer.Clear();
+
+            commandoUitgevoerd = false;
+            Button button = (Button)sender;
+            double resultaatMemory = double.Parse(resultaat + textUitvoer.Text);
+            textUitvoer.Text = textUitvoer.Text + resultaatMemory;
+        }
+
+        private void btn_clickMemoryRecall(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            uitvoeren = button.Text;
+            resultaat = Double.Parse(textUitvoer.Text);
+            double resultaatMemory = resultaat;
+            resultaatMemory = Double.Parse(textUitvoer.Text);
+            commandoUitgevoerd = true;
+
+            switch (uitvoeren)
+            {
+                case "M Recall":
+                    textUitvoer.Text = Convert.ToString(resultaatMemory);
+                    break;
+            }
+        }
+
+        private void textUitvoer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_commando_test_for_prime(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            uitvoeren = button.Text;
+            resultaat = Double.Parse(textUitvoer.Text);
+            commandoUitgevoerd = true;
+
+            switch (uitvoeren)
+            {
+                case "Test for Prime Number":
+                    
+                    double y = resultaat -2;
+                    double getal2;
+
+                    if (resultaat == 2)
+                    {
+                    textUitvoerPrime.Text = Convert.ToString(resultaat + " is a prime number");
+                        break;
+                    }
+                    else
+                    {
+                        if (resultaat <= 1 || resultaat % 1 != 0)
+                        {
+                            textUitvoerPrime.Text = Convert.ToString("This is NOT a prime number");
+                            break;
+                        }
+                        else
+
+                        {
+                            if (resultaat % 2 == 0)
+                            {
+                                textUitvoerPrime.Text = Convert.ToString("This is NOT a prime number");
+                                break;
+                            }
+                            else
+                            {
+                                for (getal2 = resultaat; y > 0; y = y - 2)
+                                {
+                                    if (getal2 % y != 0 || y == 1)
+                                    {
+                                        if (y < 2)
+                                        {
+                                            textUitvoerPrime.Text = Convert.ToString("This IS a prime number");
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            if (getal2 % y == 0)
+                                            {
+                                                textUitvoerPrime.Text = Convert.ToString("This is NOT a prime number");
+                                                break;
+                                            }
+                                            else
+                                                continue;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        textUitvoerPrime.Text = Convert.ToString("This is NOT a prime number");
+                                        break;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void textUitvoerPrime_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -59,6 +59,8 @@
             this.btnFactorial = new System.Windows.Forms.Button();
             this.btnEuroTeken = new System.Windows.Forms.Button();
             this.btnMemoryRecall = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textUitvoerPrime = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textUitvoer
@@ -76,6 +78,7 @@
             this.textUitvoer.TabIndex = 58;
             this.textUitvoer.Text = "0";
             this.textUitvoer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textUitvoer.TextChanged += new System.EventHandler(this.textUitvoer_TextChanged);
             // 
             // btnWortel
             // 
@@ -377,6 +380,7 @@
             this.btnMemoryStore.TabIndex = 60;
             this.btnMemoryStore.Text = "M Store";
             this.btnMemoryStore.UseVisualStyleBackColor = false;
+            this.btnMemoryStore.Click += new System.EventHandler(this.btn_clickMemoryStore);
             // 
             // btnMemoryClear
             // 
@@ -424,12 +428,43 @@
             this.btnMemoryRecall.TabIndex = 68;
             this.btnMemoryRecall.Text = "M Recall";
             this.btnMemoryRecall.UseVisualStyleBackColor = false;
+            this.btnMemoryRecall.Click += new System.EventHandler(this.btn_clickMemoryRecall);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(526, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(191, 45);
+            this.button2.TabIndex = 69;
+            this.button2.Text = "Test for Prime Number";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btn_commando_test_for_prime);
+            // 
+            // textUitvoerPrime
+            // 
+            this.textUitvoerPrime.BackColor = System.Drawing.SystemColors.Control;
+            this.textUitvoerPrime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUitvoerPrime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUitvoerPrime.Enabled = false;
+            this.textUitvoerPrime.Font = new System.Drawing.Font("Calibri", 9F);
+            this.textUitvoerPrime.Location = new System.Drawing.Point(526, 164);
+            this.textUitvoerPrime.Multiline = true;
+            this.textUitvoerPrime.Name = "textUitvoerPrime";
+            this.textUitvoerPrime.ReadOnly = true;
+            this.textUitvoerPrime.Size = new System.Drawing.Size(228, 49);
+            this.textUitvoerPrime.TabIndex = 70;
+            this.textUitvoerPrime.TextChanged += new System.EventHandler(this.textUitvoerPrime_TextChanged);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 446);
+            this.ClientSize = new System.Drawing.Size(758, 446);
+            this.Controls.Add(this.textUitvoerPrime);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnMemoryRecall);
             this.Controls.Add(this.btnEuroTeken);
             this.Controls.Add(this.btnFactorial);
@@ -503,6 +538,8 @@
         private System.Windows.Forms.Button btnFactorial;
         private System.Windows.Forms.Button btnEuroTeken;
         private System.Windows.Forms.Button btnMemoryRecall;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textUitvoerPrime;
     }
 }
 
