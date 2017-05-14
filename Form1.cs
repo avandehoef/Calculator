@@ -34,7 +34,7 @@ namespace WindowsFormsApp6
 
                 case "+ / -":
                     textUitvoer.Text = Convert.ToString(resultaat * (0-1));
-                    break;
+                        break;
 
             }
         }
@@ -55,6 +55,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             textUitvoer.Text = "0";
             textUitvoerPrime.Text = "";
+            textUitvoerFibonacci.Text = "";
             resultaat = 0;
                 
         }
@@ -73,24 +74,24 @@ namespace WindowsFormsApp6
             switch (uitvoeren)
             {
                 case "+":
-                    textUitvoer.Text = (resultaat + Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                    textUitvoer.Text = (Double.Parse(textUitvoer.Text) + resultaat).ToString();
+                        break;
 
                 case "-":
                     textUitvoer.Text = (resultaat - Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                        break;
 
                 case "x":
                     textUitvoer.Text = (resultaat * Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                        break;
 
                 case "÷":
                     textUitvoer.Text = (resultaat / Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                        break;
 
                 case "x²":
                     textUitvoer.Text = (resultaat * Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                        break;
 
                 default:
                     break;
@@ -111,7 +112,7 @@ namespace WindowsFormsApp6
 
                 case "x²":
                     textUitvoer.Text = Convert.ToString(resultaat*resultaat);
-                    break;
+                        break;
 
             }
 
@@ -139,7 +140,7 @@ namespace WindowsFormsApp6
             {
                 case "x³":
                     textUitvoer.Text = Convert.ToString(resultaat * resultaat * resultaat);
-                    break;
+                        break;
             }
         }
 
@@ -154,7 +155,7 @@ namespace WindowsFormsApp6
             {
                 case "√":
                     textUitvoer.Text = Convert.ToString(Math.Sqrt(resultaat));
-                    break;
+                        break;
             }
 
         }
@@ -170,7 +171,7 @@ namespace WindowsFormsApp6
             {
                 case "π":
                     textUitvoer.Text = Convert.ToString(Math.PI);
-                    break;
+                        break;
             }
 
 
@@ -187,39 +188,10 @@ namespace WindowsFormsApp6
             {
                 case "1 / x":
                     textUitvoer.Text = Convert.ToString(1 / resultaat);
-                    break;
+                        break;
             }
         }
-
-        private void btn_clickMemoryStore(object sender, EventArgs e)
-        {
-            if
-               ((textUitvoer.Text == "0") || (commandoUitgevoerd))
-                textUitvoer.Clear();
-
-            commandoUitgevoerd = false;
-            Button button = (Button)sender;
-            double resultaatMemory = double.Parse(resultaat + textUitvoer.Text);
-            textUitvoer.Text = textUitvoer.Text + resultaatMemory;
-        }
-
-        private void btn_clickMemoryRecall(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            uitvoeren = button.Text;
-            resultaat = Double.Parse(textUitvoer.Text);
-            double resultaatMemory = resultaat;
-            resultaatMemory = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
-
-            switch (uitvoeren)
-            {
-                case "M Recall":
-                    textUitvoer.Text = Convert.ToString(resultaatMemory);
-                    break;
-            }
-        }
-
+       
         private void textUitvoer_TextChanged(object sender, EventArgs e)
         {
 
@@ -296,6 +268,54 @@ namespace WindowsFormsApp6
         }
 
         private void textUitvoerPrime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        double resultaatMemory = 0;
+        double resultaatm = 0;
+
+        private void btn_commando_memory(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            uitvoeren = button.Text;                   
+            commandoUitgevoerd = true;
+            resultaatMemory = resultaatm;
+
+            switch (uitvoeren)
+            {
+                case "M Store":
+                    resultaatm = Double.Parse(textUitvoer.Text);
+                    resultaatMemory = resultaatm;
+                    textUitvoer.Text = Convert.ToString(resultaatMemory);
+                    textUitvoerMemory.Text = Convert.ToString("M " + resultaatMemory);
+                    break;
+
+                case "M Recall":
+                    textUitvoer.Text = Convert.ToString(resultaatMemory);
+                    break;
+
+                case "M Clear":
+                    resultaatMemory = 0;
+                    resultaatm = 0;
+                    textUitvoerMemory.Text = Convert.ToString("");
+                    break;
+
+            }   
+                        
+        }
+
+        private void textUitvoerMemory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_commando_test_for_fibonacci(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUitvoerFibonacci_TextChanged(object sender, EventArgs e)
         {
 
         }

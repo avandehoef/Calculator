@@ -61,6 +61,9 @@
             this.btnMemoryRecall = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textUitvoerPrime = new System.Windows.Forms.TextBox();
+            this.textUitvoerMemory = new System.Windows.Forms.TextBox();
+            this.textUitvoerFibonacci = new System.Windows.Forms.TextBox();
+            this.btnFibonacci = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textUitvoer
@@ -356,6 +359,7 @@
             this.btnMemoryMinus.TabIndex = 62;
             this.btnMemoryMinus.Text = "M -";
             this.btnMemoryMinus.UseVisualStyleBackColor = false;
+            this.btnMemoryMinus.Click += new System.EventHandler(this.btn_commando_memory);
             // 
             // btnMemoryPlus
             // 
@@ -368,6 +372,7 @@
             this.btnMemoryPlus.TabIndex = 61;
             this.btnMemoryPlus.Text = "M +";
             this.btnMemoryPlus.UseVisualStyleBackColor = false;
+            this.btnMemoryPlus.Click += new System.EventHandler(this.btn_commando_memory);
             // 
             // btnMemoryStore
             // 
@@ -380,7 +385,7 @@
             this.btnMemoryStore.TabIndex = 60;
             this.btnMemoryStore.Text = "M Store";
             this.btnMemoryStore.UseVisualStyleBackColor = false;
-            this.btnMemoryStore.Click += new System.EventHandler(this.btn_clickMemoryStore);
+            this.btnMemoryStore.Click += new System.EventHandler(this.btn_commando_memory);
             // 
             // btnMemoryClear
             // 
@@ -393,6 +398,7 @@
             this.btnMemoryClear.TabIndex = 65;
             this.btnMemoryClear.Text = "M Clear";
             this.btnMemoryClear.UseVisualStyleBackColor = false;
+            this.btnMemoryClear.Click += new System.EventHandler(this.btn_commando_memory);
             // 
             // btnFactorial
             // 
@@ -428,16 +434,16 @@
             this.btnMemoryRecall.TabIndex = 68;
             this.btnMemoryRecall.Text = "M Recall";
             this.btnMemoryRecall.UseVisualStyleBackColor = false;
-            this.btnMemoryRecall.Click += new System.EventHandler(this.btn_clickMemoryRecall);
+            this.btnMemoryRecall.Click += new System.EventHandler(this.btn_commando_memory);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(526, 99);
+            this.button2.Location = new System.Drawing.Point(526, 213);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(191, 45);
+            this.button2.Size = new System.Drawing.Size(218, 41);
             this.button2.TabIndex = 69;
             this.button2.Text = "Test for Prime Number";
             this.button2.UseVisualStyleBackColor = false;
@@ -449,20 +455,66 @@
             this.textUitvoerPrime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUitvoerPrime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textUitvoerPrime.Enabled = false;
-            this.textUitvoerPrime.Font = new System.Drawing.Font("Calibri", 9F);
-            this.textUitvoerPrime.Location = new System.Drawing.Point(526, 164);
+            this.textUitvoerPrime.Font = new System.Drawing.Font("Calibri", 8F);
+            this.textUitvoerPrime.Location = new System.Drawing.Point(526, 265);
             this.textUitvoerPrime.Multiline = true;
             this.textUitvoerPrime.Name = "textUitvoerPrime";
             this.textUitvoerPrime.ReadOnly = true;
-            this.textUitvoerPrime.Size = new System.Drawing.Size(228, 49);
+            this.textUitvoerPrime.Size = new System.Drawing.Size(248, 45);
             this.textUitvoerPrime.TabIndex = 70;
             this.textUitvoerPrime.TextChanged += new System.EventHandler(this.textUitvoerPrime_TextChanged);
+            // 
+            // textUitvoerMemory
+            // 
+            this.textUitvoerMemory.BackColor = System.Drawing.SystemColors.Control;
+            this.textUitvoerMemory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUitvoerMemory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUitvoerMemory.Enabled = false;
+            this.textUitvoerMemory.Font = new System.Drawing.Font("Calibri", 8F);
+            this.textUitvoerMemory.Location = new System.Drawing.Point(526, 163);
+            this.textUitvoerMemory.Multiline = true;
+            this.textUitvoerMemory.Name = "textUitvoerMemory";
+            this.textUitvoerMemory.ReadOnly = true;
+            this.textUitvoerMemory.Size = new System.Drawing.Size(248, 44);
+            this.textUitvoerMemory.TabIndex = 71;
+            this.textUitvoerMemory.TextChanged += new System.EventHandler(this.textUitvoerMemory_TextChanged);
+            // 
+            // textUitvoerFibonacci
+            // 
+            this.textUitvoerFibonacci.BackColor = System.Drawing.SystemColors.Control;
+            this.textUitvoerFibonacci.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUitvoerFibonacci.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUitvoerFibonacci.Enabled = false;
+            this.textUitvoerFibonacci.Font = new System.Drawing.Font("Calibri", 8F);
+            this.textUitvoerFibonacci.Location = new System.Drawing.Point(526, 367);
+            this.textUitvoerFibonacci.Multiline = true;
+            this.textUitvoerFibonacci.Name = "textUitvoerFibonacci";
+            this.textUitvoerFibonacci.ReadOnly = true;
+            this.textUitvoerFibonacci.Size = new System.Drawing.Size(248, 45);
+            this.textUitvoerFibonacci.TabIndex = 72;
+            this.textUitvoerFibonacci.TextChanged += new System.EventHandler(this.textUitvoerFibonacci_TextChanged);
+            // 
+            // btnFibonacci
+            // 
+            this.btnFibonacci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFibonacci.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.btnFibonacci.ForeColor = System.Drawing.Color.White;
+            this.btnFibonacci.Location = new System.Drawing.Point(526, 315);
+            this.btnFibonacci.Name = "btnFibonacci";
+            this.btnFibonacci.Size = new System.Drawing.Size(218, 41);
+            this.btnFibonacci.TabIndex = 73;
+            this.btnFibonacci.Text = "Test for Fibonacci Number";
+            this.btnFibonacci.UseVisualStyleBackColor = false;
+            this.btnFibonacci.Click += new System.EventHandler(this.btn_commando_test_for_fibonacci);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 446);
+            this.ClientSize = new System.Drawing.Size(777, 446);
+            this.Controls.Add(this.btnFibonacci);
+            this.Controls.Add(this.textUitvoerFibonacci);
+            this.Controls.Add(this.textUitvoerMemory);
             this.Controls.Add(this.textUitvoerPrime);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnMemoryRecall);
@@ -540,6 +592,9 @@
         private System.Windows.Forms.Button btnMemoryRecall;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textUitvoerPrime;
+        private System.Windows.Forms.TextBox textUitvoerMemory;
+        private System.Windows.Forms.TextBox textUitvoerFibonacci;
+        private System.Windows.Forms.Button btnFibonacci;
     }
 }
 
