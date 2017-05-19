@@ -97,7 +97,7 @@
             // 
             // btnPlusMin
             // 
-            this.btnPlusMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPlusMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnPlusMin.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlusMin.Location = new System.Drawing.Point(238, 316);
             this.btnPlusMin.Name = "btnPlusMin";
@@ -134,7 +134,7 @@
             // 
             // btnKomma
             // 
-            this.btnKomma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnKomma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnKomma.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKomma.Location = new System.Drawing.Point(46, 316);
             this.btnKomma.Name = "btnKomma";
@@ -346,7 +346,7 @@
             this.button1.TabIndex = 64;
             this.button1.Text = "π";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btn_commando_pi);
+            this.button1.Click += new System.EventHandler(this.btn_click_pi);
             // 
             // btnMemoryMinus
             // 
@@ -422,6 +422,7 @@
             this.btnEuroTeken.TabIndex = 67;
             this.btnEuroTeken.Text = "€";
             this.btnEuroTeken.UseVisualStyleBackColor = false;
+            this.btnEuroTeken.Click += new System.EventHandler(this.btnEuroClick);
             // 
             // btnMemoryRecall
             // 
