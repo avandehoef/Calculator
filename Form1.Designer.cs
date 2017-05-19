@@ -288,7 +288,6 @@
             this.btnZeven.Text = "7";
             this.btnZeven.UseVisualStyleBackColor = false;
             this.btnZeven.Click += new System.EventHandler(this.btn_click);
-            this.btnZeven.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnZeven_KeyPress);
             // 
             // btnDerdeMacht
             // 
@@ -441,14 +440,14 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(526, 213);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 41);
+            this.button2.Size = new System.Drawing.Size(158, 46);
             this.button2.TabIndex = 69;
-            this.button2.Text = "Test for Prime Number";
+            this.button2.Text = "Prime Number";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btn_commando_test_for_prime);
             // 
@@ -459,11 +458,11 @@
             this.textUitvoerPrime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textUitvoerPrime.Enabled = false;
             this.textUitvoerPrime.Font = new System.Drawing.Font("Calibri", 8F);
-            this.textUitvoerPrime.Location = new System.Drawing.Point(526, 265);
+            this.textUitvoerPrime.Location = new System.Drawing.Point(526, 264);
             this.textUitvoerPrime.Multiline = true;
             this.textUitvoerPrime.Name = "textUitvoerPrime";
             this.textUitvoerPrime.ReadOnly = true;
-            this.textUitvoerPrime.Size = new System.Drawing.Size(248, 45);
+            this.textUitvoerPrime.Size = new System.Drawing.Size(201, 45);
             this.textUitvoerPrime.TabIndex = 70;
             this.textUitvoerPrime.TextChanged += new System.EventHandler(this.textUitvoerPrime_TextChanged);
             // 
@@ -478,7 +477,7 @@
             this.textUitvoerMemory.Multiline = true;
             this.textUitvoerMemory.Name = "textUitvoerMemory";
             this.textUitvoerMemory.ReadOnly = true;
-            this.textUitvoerMemory.Size = new System.Drawing.Size(248, 44);
+            this.textUitvoerMemory.Size = new System.Drawing.Size(201, 44);
             this.textUitvoerMemory.TabIndex = 71;
             this.textUitvoerMemory.TextChanged += new System.EventHandler(this.textUitvoerMemory_TextChanged);
             // 
@@ -493,20 +492,20 @@
             this.textUitvoerFibonacci.Multiline = true;
             this.textUitvoerFibonacci.Name = "textUitvoerFibonacci";
             this.textUitvoerFibonacci.ReadOnly = true;
-            this.textUitvoerFibonacci.Size = new System.Drawing.Size(248, 45);
+            this.textUitvoerFibonacci.Size = new System.Drawing.Size(201, 45);
             this.textUitvoerFibonacci.TabIndex = 72;
             this.textUitvoerFibonacci.TextChanged += new System.EventHandler(this.textUitvoerFibonacci_TextChanged);
             // 
             // btnFibonacci
             // 
-            this.btnFibonacci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFibonacci.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnFibonacci.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btnFibonacci.ForeColor = System.Drawing.Color.White;
             this.btnFibonacci.Location = new System.Drawing.Point(526, 315);
             this.btnFibonacci.Name = "btnFibonacci";
-            this.btnFibonacci.Size = new System.Drawing.Size(218, 41);
+            this.btnFibonacci.Size = new System.Drawing.Size(158, 45);
             this.btnFibonacci.TabIndex = 73;
-            this.btnFibonacci.Text = "Test for Fibonacci Number";
+            this.btnFibonacci.Text = "Fibonacci Number";
             this.btnFibonacci.UseVisualStyleBackColor = false;
             this.btnFibonacci.Click += new System.EventHandler(this.btn_commando_test_for_fibonacci);
             // 
@@ -528,13 +527,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 446);
-            this.Controls.Add(this.textUitvoerHuidigeBerekening);
-            this.Controls.Add(this.btnFibonacci);
+            this.ClientSize = new System.Drawing.Size(730, 446);
             this.Controls.Add(this.textUitvoerFibonacci);
-            this.Controls.Add(this.textUitvoerMemory);
-            this.Controls.Add(this.textUitvoerPrime);
+            this.Controls.Add(this.btnFibonacci);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.textUitvoerPrime);
+            this.Controls.Add(this.textUitvoerHuidigeBerekening);
+            this.Controls.Add(this.textUitvoerMemory);
             this.Controls.Add(this.btnMemoryRecall);
             this.Controls.Add(this.btnEuroTeken);
             this.Controls.Add(this.btnFactorial);
@@ -567,11 +566,13 @@
             this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Calculator_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

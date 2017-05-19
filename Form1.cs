@@ -20,8 +20,8 @@ namespace WindowsFormsApp6
         public Calculator()
         {
             InitializeComponent();
-        }
-                
+        }              
+
         private void btn_click(object sender, EventArgs e)
         {
             if
@@ -238,7 +238,7 @@ namespace WindowsFormsApp6
             
             switch (uitvoeren)
             {
-                case "Test for Prime Number":
+                case "Prime Number":
                     
                     double y = resultaat -2;
                     double getal2;
@@ -323,14 +323,117 @@ namespace WindowsFormsApp6
 
         }
 
-        private void btnZeven_KeyPress(object sender, KeyPressEventArgs e)
+        private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
         {
-                        
-            if (e.KeyChar == (char)Keys.NumPad7)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                textUitvoer.Text = textUitvoer.Text + 7;
+                btnIsAntwoord.PerformClick();                
             }
-            
+
+            switch (e.KeyChar.ToString())
+            {
+                case "1":
+                    btnEen.TabIndex = 1;
+                    btnEen.TabStop = false;
+                    btnEen.PerformClick();
+                    break;
+
+                case "2":
+                    btnTwee.TabIndex = 2;
+                    btnTwee.TabStop = false;
+                    btnTwee.PerformClick();
+                    break;
+
+                case "3":
+                    btnDrie.TabIndex = 3;
+                    btnDrie.TabStop = false;
+                    btnDrie.PerformClick();
+                    break;
+
+                case "4":
+                    btnVier.TabIndex = 4;
+                    btnVier.TabStop = false;
+                    btnVier.PerformClick();
+                    break;
+
+                case "5":
+                    btnVijf.TabIndex = 5;
+                    btnVijf.TabStop = false;
+                    btnVijf.PerformClick();
+                    break;
+
+                case "6":
+                    btnZes.TabIndex = 6;
+                    btnZes.TabStop = false;
+                    btnZes.PerformClick();
+                    break;
+
+                case "7":
+                    btnZeven.TabIndex = 7;
+                    btnZeven.TabStop = false;
+                    btnZeven.PerformClick();
+                    break;
+
+                case "8":
+                    btnAcht.TabIndex = 8;
+                    btnAcht.TabStop = false;
+                    btnAcht.PerformClick();
+                    break;
+
+                case "9":
+                    btnNegen.TabIndex = 9;
+                    btnNegen.TabStop = false;
+                    btnNegen.PerformClick();
+                    break;
+
+                case "0":
+                    btnNul.TabIndex = 10;
+                    btnNul.TabStop = false;
+                    btnNul.PerformClick();
+                    break;
+
+                case "+":
+                    btnPlus.TabIndex = 11;
+                    btnPlus.TabStop = false;
+                    btnPlus.PerformClick();
+                    break;
+                
+                case "-":
+                    btnMin.TabIndex = 12;
+                    btnMin.TabStop = false;
+                    btnMin.PerformClick();
+                    break;
+
+                case "*":
+                    btnKeer.TabIndex = 13;
+                    btnKeer.TabStop = false;
+                    btnKeer.PerformClick();
+                    break;
+
+                case "/":
+                    btnGedeeldDoor.TabIndex = 14;
+                    btnGedeeldDoor.TabStop = false;
+                    btnGedeeldDoor.PerformClick();
+                    break;
+
+                case ".":
+                    btnKomma.TabIndex = 15;
+                    btnKomma.TabStop = false;
+                    btnKomma.PerformClick();
+                    break;
+
+                case ",":
+                    btnKomma.TabStop = false;
+                    btnKomma.PerformClick();
+                    break;
+
+                case "=":
+                    btnIsAntwoord.PerformClick();
+                    break;
+                    
+                default:
+                    break;
+            }
         }
     }
 }
