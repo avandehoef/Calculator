@@ -15,7 +15,7 @@ namespace WindowsFormsApp6
 
         double resultaat = 0;
         string uitvoeren = "";
-        bool commandoUitgevoerd = false;
+        bool opCommandoGeclicked;
 
         public Calculator()
         {
@@ -25,10 +25,10 @@ namespace WindowsFormsApp6
         private void btn_click(object sender, EventArgs e)
         {
             if
-                ((textUitvoer.Text == "0") || (commandoUitgevoerd))
+                ((textUitvoer.Text == "0") || (opCommandoGeclicked))
                 textUitvoer.Clear();
 
-            commandoUitgevoerd = false;
+            opCommandoGeclicked = false;
             Button button = (Button)sender;
             textUitvoer.Text = textUitvoer.Text + button.Text;
         }
@@ -39,15 +39,35 @@ namespace WindowsFormsApp6
             textUitvoer.Text = "0";
             textUitvoerPrime.Text = "";
             textUitvoerFibonacci.Text = "";
+            textUitvoerHuidigeBerekening.Text = "";
             resultaat = 0;                
         }
 
         private void btn_commando(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+            /**
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             commandoUitgevoerd = true;
+            */            
+            if (resultaat != 0)
+            {
+                btnIsAntwoord.PerformClick();
+                uitvoeren = button.Text;
+                resultaat = Double.Parse(textUitvoer.Text);
+                textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+                opCommandoGeclicked = true;
+            }
+            else
+            {               
+                uitvoeren = button.Text;
+                resultaat = Double.Parse(textUitvoer.Text);
+                textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+                opCommandoGeclicked = true;                
+            }
+            
         }
 
         private void btnPlusMin_Click(object sender, EventArgs e)
@@ -55,17 +75,16 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             textUitvoer.Text = Convert.ToString(resultaat * (0 - 1));
         }
 
         private void btnIsAntwoord_Click(object sender, EventArgs e)
         {
-
             switch (uitvoeren)
             {
                 case "+":
-                    textUitvoer.Text = (Double.Parse(textUitvoer.Text) + resultaat).ToString();
+                    textUitvoer.Text = (resultaat + Double.Parse(textUitvoer.Text)).ToString();
                     break;
 
                 case "-":
@@ -80,13 +99,11 @@ namespace WindowsFormsApp6
                     textUitvoer.Text = (resultaat / Double.Parse(textUitvoer.Text)).ToString();
                     break;
 
-                case "x²":
-                    textUitvoer.Text = (resultaat * Double.Parse(textUitvoer.Text)).ToString();
-                    break;
-
                 default:
                     break;
             }
+            resultaat = Double.Parse(textUitvoer.Text);
+            uitvoeren = "";
         }
 
         private void btn_commandoKwadraat(object sender, EventArgs e)
@@ -94,19 +111,24 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             textUitvoer.Text = Convert.ToString(resultaat * resultaat);            
         }
 
         private void btn_click_komma(object sender, EventArgs e)
         {
             if 
-            ((textUitvoer.Text == "0") || (commandoUitgevoerd))
+            ((textUitvoer.Text == "0") || (opCommandoGeclicked))
                 textUitvoer.Clear();
 
-            commandoUitgevoerd = false;
+            opCommandoGeclicked = false;
             Button button = (Button)sender;
-            textUitvoer.Text = textUitvoer.Text + ",";
+            if (textUitvoer.Text.Contains(","))
+            { }
+            else
+            {
+                textUitvoer.Text = textUitvoer.Text + ",";
+            }
         }
 
         private void btn_commandoDerdeMacht(object sender, EventArgs e)
@@ -114,7 +136,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             textUitvoer.Text = Convert.ToString(resultaat * resultaat * resultaat);                
         }
 
@@ -123,7 +145,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             textUitvoer.Text = Convert.ToString(Math.Sqrt(resultaat));            
         }
             
@@ -132,7 +154,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
             textUitvoer.Text = Convert.ToString(1 / resultaat);
         }
 
@@ -143,7 +165,7 @@ namespace WindowsFormsApp6
         {
             Button button = (Button)sender;
             uitvoeren = button.Text;
-            commandoUitgevoerd = true;
+            opCommandoGeclicked = true;
             resultaatMemory = resultaatm;
 
             switch (uitvoeren)
@@ -157,6 +179,7 @@ namespace WindowsFormsApp6
 
                 case "M Recall":
                     textUitvoer.Text = Convert.ToString(resultaatMemory);
+                    resultaatMemory = Double.Parse(textUitvoer.Text);
                     break;
 
                 case "M Clear":
@@ -172,6 +195,9 @@ namespace WindowsFormsApp6
                 case "M +":
                     textUitvoer.Text = (double.Parse(textUitvoer.Text) + (resultaatMemory)).ToString();
                     break;
+
+                default:
+                    break;
             }
 
         }
@@ -179,13 +205,18 @@ namespace WindowsFormsApp6
         private void btn_click_pi(object sender, EventArgs e)
         {
             if
-            ((textUitvoer.Text == "0") || (commandoUitgevoerd))
+            ((textUitvoer.Text == "0") || (opCommandoGeclicked))
                 textUitvoer.Clear();
 
-            commandoUitgevoerd = false;
+            opCommandoGeclicked = false;
 
             Button button = (Button)sender;
-            textUitvoer.Text = textUitvoer.Text + Convert.ToString(Math.PI);
+            if (textUitvoer.Text.Contains(Convert.ToString(Math.PI)))
+            { }
+            else
+            {
+                textUitvoer.Text = textUitvoer.Text + Convert.ToString(Math.PI);
+            }
         }
 
         private void btnEuroClick(object sender, EventArgs e)
@@ -195,7 +226,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaatEuro = Decimal.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
+            opCommandoGeclicked = true;
             textUitvoer.Text = String.Format("{0:C}", resultaatEuro);
         }
 
@@ -204,8 +235,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            commandoUitgevoerd = true;
-
+            
             switch (uitvoeren)
             {
                 case "Test for Prime Number":
@@ -226,7 +256,6 @@ namespace WindowsFormsApp6
                             break;
                         }
                         else
-
                         {
                             if (resultaat % 2 == 0)
                             {
@@ -292,6 +321,16 @@ namespace WindowsFormsApp6
         private void textUitvoerFibonacci_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnZeven_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                        
+            if (e.KeyChar == (char)Keys.NumPad7)
+            {
+                textUitvoer.Text = textUitvoer.Text + 7;
+            }
+            
         }
     }
 }

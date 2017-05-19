@@ -64,6 +64,7 @@
             this.textUitvoerMemory = new System.Windows.Forms.TextBox();
             this.textUitvoerFibonacci = new System.Windows.Forms.TextBox();
             this.btnFibonacci = new System.Windows.Forms.Button();
+            this.textUitvoerHuidigeBerekening = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textUitvoer
@@ -287,6 +288,7 @@
             this.btnZeven.Text = "7";
             this.btnZeven.UseVisualStyleBackColor = false;
             this.btnZeven.Click += new System.EventHandler(this.btn_click);
+            this.btnZeven.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnZeven_KeyPress);
             // 
             // btnDerdeMacht
             // 
@@ -508,11 +510,26 @@
             this.btnFibonacci.UseVisualStyleBackColor = false;
             this.btnFibonacci.Click += new System.EventHandler(this.btn_commando_test_for_fibonacci);
             // 
+            // textUitvoerHuidigeBerekening
+            // 
+            this.textUitvoerHuidigeBerekening.BackColor = System.Drawing.SystemColors.Control;
+            this.textUitvoerHuidigeBerekening.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUitvoerHuidigeBerekening.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUitvoerHuidigeBerekening.Enabled = false;
+            this.textUitvoerHuidigeBerekening.Font = new System.Drawing.Font("Calibri", 8F);
+            this.textUitvoerHuidigeBerekening.Location = new System.Drawing.Point(526, 35);
+            this.textUitvoerHuidigeBerekening.Multiline = true;
+            this.textUitvoerHuidigeBerekening.Name = "textUitvoerHuidigeBerekening";
+            this.textUitvoerHuidigeBerekening.ReadOnly = true;
+            this.textUitvoerHuidigeBerekening.Size = new System.Drawing.Size(218, 109);
+            this.textUitvoerHuidigeBerekening.TabIndex = 74;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 446);
+            this.Controls.Add(this.textUitvoerHuidigeBerekening);
             this.Controls.Add(this.btnFibonacci);
             this.Controls.Add(this.textUitvoerFibonacci);
             this.Controls.Add(this.textUitvoerMemory);
@@ -596,6 +613,7 @@
         private System.Windows.Forms.TextBox textUitvoerMemory;
         private System.Windows.Forms.TextBox textUitvoerFibonacci;
         private System.Windows.Forms.Button btnFibonacci;
+        private System.Windows.Forms.TextBox textUitvoerHuidigeBerekening;
     }
 }
 
