@@ -15,7 +15,7 @@ namespace WindowsFormsApp6
 
         double resultaat = 0;
         string uitvoeren = "";
-        bool opCommandoGeclicked;
+        bool opCommandoGeclicked;        
 
         public Calculator()
         {
@@ -40,7 +40,21 @@ namespace WindowsFormsApp6
             textUitvoerPrime.Text = "";
             textUitvoerFibonacci.Text = "";
             textUitvoerHuidigeBerekening.Text = "";
-            resultaat = 0;                
+            resultaat = 0;
+
+            btnClear.Enabled = false;
+            
+            string geenText = textUitvoerClear.Text;
+            var backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
+            backgroundWorker.RunWorkerCompleted += (s, ea) =>
+            {
+            textUitvoerClear.Text = geenText;
+            btnClear.Enabled = true;
+            };
+            
+            textUitvoerClear.Text = "Cleared";
+            backgroundWorker.RunWorkerAsync();
         }
 
         private void btn_commando(object sender, EventArgs e)
@@ -66,8 +80,7 @@ namespace WindowsFormsApp6
                 resultaat = Double.Parse(textUitvoer.Text);
                 textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
                 opCommandoGeclicked = true;                
-            }
-            
+            }            
         }
 
         private void btnPlusMin_Click(object sender, EventArgs e)
@@ -75,7 +88,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + "  =";
             textUitvoer.Text = Convert.ToString(resultaat * (0 - 1));
         }
 
@@ -97,7 +110,7 @@ namespace WindowsFormsApp6
 
                 case "÷":
                     textUitvoer.Text = (resultaat / Double.Parse(textUitvoer.Text)).ToString();
-                    break;
+                    break;                
 
                 default:
                     break;
@@ -111,7 +124,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + "  =";
             textUitvoer.Text = Convert.ToString(resultaat * resultaat);            
         }
 
@@ -130,22 +143,13 @@ namespace WindowsFormsApp6
                 textUitvoer.Text = textUitvoer.Text + ",";
             }
         }
-
-        private void btn_commandoDerdeMacht(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            uitvoeren = button.Text;
-            resultaat = Double.Parse(textUitvoer.Text);
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
-            textUitvoer.Text = Convert.ToString(resultaat * resultaat * resultaat);                
-        }
-
+        
         private void btn_commandoWortel(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + "  =";
             textUitvoer.Text = Convert.ToString(Math.Sqrt(resultaat));            
         }
             
@@ -154,7 +158,7 @@ namespace WindowsFormsApp6
             Button button = (Button)sender;
             uitvoeren = button.Text;
             resultaat = Double.Parse(textUitvoer.Text);
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + "  =";            
             textUitvoer.Text = Convert.ToString(1 / resultaat);
         }
 
@@ -186,6 +190,20 @@ namespace WindowsFormsApp6
                     resultaatMemory = 0;
                     resultaatm = 0;
                     textUitvoerMemory.Text = Convert.ToString("");
+                                        
+                    btnMemoryClear.Enabled = false;
+
+                    string geenText = textUitvoerMemory.Text;
+                    var backgroundWorker = new BackgroundWorker();
+                    backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
+                    backgroundWorker.RunWorkerCompleted += (s, ea) =>
+                    {
+                        textUitvoerMemory.Text = geenText;
+                        btnMemoryClear.Enabled = true;
+                    };
+
+                    textUitvoerMemory.Text = "Memory Cleared";
+                    backgroundWorker.RunWorkerAsync();
                     break;
 
                 case "M -":
@@ -298,6 +316,84 @@ namespace WindowsFormsApp6
             }
         }
         
+        private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            switch (e.KeyChar.ToString())
+            {
+                case "1":
+                    btnEen.PerformClick();
+                    break;
+
+                case "2":
+                    btnTwee.PerformClick();
+                    break;
+
+                case "3":
+                    btnDrie.PerformClick();
+                    break;
+
+                case "4":
+                    btnVier.PerformClick();
+                    break;
+
+                case "5":
+                    btnVijf.PerformClick();
+                    break;
+
+                case "6":
+                    btnZes.PerformClick();
+                    break;
+
+                case "7":
+                    btnZeven.PerformClick();
+                    break;
+
+                case "8":
+                    btnAcht.PerformClick();
+                    break;
+
+                case "9":
+                    btnNegen.PerformClick();
+                    break;
+
+                case "0":
+                    btnNul.PerformClick();
+                    break;
+
+                case "+":
+                    btnPlus.PerformClick();
+                    break;
+                
+                case "-":
+                    btnMin.PerformClick();
+                    break;
+
+                case "*":                    
+                    btnKeer.PerformClick();
+                    break;
+
+                case "/":                    
+                    btnGedeeldDoor.PerformClick();
+                    break;
+
+                case ".":                    
+                    btnKomma.PerformClick();
+                    break;
+
+                case ",":                    
+                    btnKomma.PerformClick();
+                    break;
+
+                case "=":
+                    btnIsAntwoord.PerformClick();
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+
         private void textUitvoer_TextChanged(object sender, EventArgs e)
         {
 
@@ -323,117 +419,26 @@ namespace WindowsFormsApp6
 
         }
 
-        private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
+        private void textUitvoerHuidigeBerekening_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnIsAntwoord.PerformClick();                
-            }
 
-            switch (e.KeyChar.ToString())
-            {
-                case "1":
-                    btnEen.TabIndex = 1;
-                    btnEen.TabStop = false;
-                    btnEen.PerformClick();
-                    break;
-
-                case "2":
-                    btnTwee.TabIndex = 2;
-                    btnTwee.TabStop = false;
-                    btnTwee.PerformClick();
-                    break;
-
-                case "3":
-                    btnDrie.TabIndex = 3;
-                    btnDrie.TabStop = false;
-                    btnDrie.PerformClick();
-                    break;
-
-                case "4":
-                    btnVier.TabIndex = 4;
-                    btnVier.TabStop = false;
-                    btnVier.PerformClick();
-                    break;
-
-                case "5":
-                    btnVijf.TabIndex = 5;
-                    btnVijf.TabStop = false;
-                    btnVijf.PerformClick();
-                    break;
-
-                case "6":
-                    btnZes.TabIndex = 6;
-                    btnZes.TabStop = false;
-                    btnZes.PerformClick();
-                    break;
-
-                case "7":
-                    btnZeven.TabIndex = 7;
-                    btnZeven.TabStop = false;
-                    btnZeven.PerformClick();
-                    break;
-
-                case "8":
-                    btnAcht.TabIndex = 8;
-                    btnAcht.TabStop = false;
-                    btnAcht.PerformClick();
-                    break;
-
-                case "9":
-                    btnNegen.TabIndex = 9;
-                    btnNegen.TabStop = false;
-                    btnNegen.PerformClick();
-                    break;
-
-                case "0":
-                    btnNul.TabIndex = 10;
-                    btnNul.TabStop = false;
-                    btnNul.PerformClick();
-                    break;
-
-                case "+":
-                    btnPlus.TabIndex = 11;
-                    btnPlus.TabStop = false;
-                    btnPlus.PerformClick();
-                    break;
-                
-                case "-":
-                    btnMin.TabIndex = 12;
-                    btnMin.TabStop = false;
-                    btnMin.PerformClick();
-                    break;
-
-                case "*":
-                    btnKeer.TabIndex = 13;
-                    btnKeer.TabStop = false;
-                    btnKeer.PerformClick();
-                    break;
-
-                case "/":
-                    btnGedeeldDoor.TabIndex = 14;
-                    btnGedeeldDoor.TabStop = false;
-                    btnGedeeldDoor.PerformClick();
-                    break;
-
-                case ".":
-                    btnKomma.TabIndex = 15;
-                    btnKomma.TabStop = false;
-                    btnKomma.PerformClick();
-                    break;
-
-                case ",":
-                    btnKomma.TabStop = false;
-                    btnKomma.PerformClick();
-                    break;
-
-                case "=":
-                    btnIsAntwoord.PerformClick();
-                    break;
-                    
-                default:
-                    break;
-            }
         }
+
+        private void btnProcentClick(object sender, EventArgs e)
+        {
+            if
+            ((textUitvoer.Text == "0") || (opCommandoGeclicked))
+                textUitvoer.Clear();
+
+            double resultaatProcent = 0;
+            resultaatProcent = double.Parse(textUitvoer.Text);
+
+            opCommandoGeclicked = false;
+
+            Button button = (Button)sender;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + " " + resultaatProcent + "%  =";
+            textUitvoer.Text = Convert.ToString(resultaat * resultaatProcent/100);
+
+        }      
     }
 }

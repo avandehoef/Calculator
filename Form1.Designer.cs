@@ -47,7 +47,7 @@
             this.btnKeer = new System.Windows.Forms.Button();
             this.btnAcht = new System.Windows.Forms.Button();
             this.btnZeven = new System.Windows.Forms.Button();
-            this.btnDerdeMacht = new System.Windows.Forms.Button();
+            this.btnProcent = new System.Windows.Forms.Button();
             this.btnGedeeldDoor = new System.Windows.Forms.Button();
             this.btnKwadraat = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@
             this.textUitvoerFibonacci = new System.Windows.Forms.TextBox();
             this.btnFibonacci = new System.Windows.Forms.Button();
             this.textUitvoerHuidigeBerekening = new System.Windows.Forms.TextBox();
+            this.textUitvoerClear = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textUitvoer
@@ -80,6 +81,7 @@
             this.textUitvoer.ReadOnly = true;
             this.textUitvoer.Size = new System.Drawing.Size(378, 49);
             this.textUitvoer.TabIndex = 58;
+            this.textUitvoer.TabStop = false;
             this.textUitvoer.Text = "0";
             this.textUitvoer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textUitvoer.TextChanged += new System.EventHandler(this.textUitvoer_TextChanged);
@@ -88,10 +90,11 @@
             // 
             this.btnWortel.BackColor = System.Drawing.Color.Silver;
             this.btnWortel.Font = new System.Drawing.Font("Calibri", 11F);
-            this.btnWortel.Location = new System.Drawing.Point(334, 99);
+            this.btnWortel.Location = new System.Drawing.Point(238, 99);
             this.btnWortel.Name = "btnWortel";
             this.btnWortel.Size = new System.Drawing.Size(90, 45);
             this.btnWortel.TabIndex = 57;
+            this.btnWortel.TabStop = false;
             this.btnWortel.Text = "√";
             this.btnWortel.UseVisualStyleBackColor = false;
             this.btnWortel.Click += new System.EventHandler(this.btn_commandoWortel);
@@ -104,6 +107,7 @@
             this.btnPlusMin.Name = "btnPlusMin";
             this.btnPlusMin.Size = new System.Drawing.Size(90, 45);
             this.btnPlusMin.TabIndex = 56;
+            this.btnPlusMin.TabStop = false;
             this.btnPlusMin.Text = "+ / -";
             this.btnPlusMin.UseVisualStyleBackColor = false;
             this.btnPlusMin.Click += new System.EventHandler(this.btnPlusMin_Click);
@@ -129,6 +133,7 @@
             this.btnNul.Name = "btnNul";
             this.btnNul.Size = new System.Drawing.Size(90, 45);
             this.btnNul.TabIndex = 54;
+            this.btnNul.TabStop = false;
             this.btnNul.Text = "0";
             this.btnNul.UseVisualStyleBackColor = false;
             this.btnNul.Click += new System.EventHandler(this.btn_click);
@@ -141,6 +146,7 @@
             this.btnKomma.Name = "btnKomma";
             this.btnKomma.Size = new System.Drawing.Size(90, 45);
             this.btnKomma.TabIndex = 53;
+            this.btnKomma.TabStop = false;
             this.btnKomma.Text = ",";
             this.btnKomma.UseVisualStyleBackColor = false;
             this.btnKomma.Click += new System.EventHandler(this.btn_click_komma);
@@ -153,6 +159,7 @@
             this.btnDrie.Name = "btnDrie";
             this.btnDrie.Size = new System.Drawing.Size(90, 45);
             this.btnDrie.TabIndex = 52;
+            this.btnDrie.TabStop = false;
             this.btnDrie.Text = "3";
             this.btnDrie.UseVisualStyleBackColor = false;
             this.btnDrie.Click += new System.EventHandler(this.btn_click);
@@ -165,6 +172,7 @@
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(90, 45);
             this.btnPlus.TabIndex = 51;
+            this.btnPlus.TabStop = false;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
             this.btnPlus.Click += new System.EventHandler(this.btn_commando);
@@ -177,6 +185,7 @@
             this.btnTwee.Name = "btnTwee";
             this.btnTwee.Size = new System.Drawing.Size(90, 45);
             this.btnTwee.TabIndex = 50;
+            this.btnTwee.TabStop = false;
             this.btnTwee.Text = "2";
             this.btnTwee.UseVisualStyleBackColor = false;
             this.btnTwee.Click += new System.EventHandler(this.btn_click);
@@ -189,6 +198,7 @@
             this.btnEen.Name = "btnEen";
             this.btnEen.Size = new System.Drawing.Size(90, 45);
             this.btnEen.TabIndex = 49;
+            this.btnEen.TabStop = false;
             this.btnEen.Text = "1";
             this.btnEen.UseVisualStyleBackColor = false;
             this.btnEen.Click += new System.EventHandler(this.btn_click);
@@ -201,6 +211,7 @@
             this.btnZes.Name = "btnZes";
             this.btnZes.Size = new System.Drawing.Size(90, 45);
             this.btnZes.TabIndex = 48;
+            this.btnZes.TabStop = false;
             this.btnZes.Text = "6";
             this.btnZes.UseVisualStyleBackColor = false;
             this.btnZes.Click += new System.EventHandler(this.btn_click);
@@ -213,6 +224,7 @@
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(90, 45);
             this.btnMin.TabIndex = 47;
+            this.btnMin.TabStop = false;
             this.btnMin.Text = "-";
             this.btnMin.UseVisualStyleBackColor = false;
             this.btnMin.Click += new System.EventHandler(this.btn_commando);
@@ -225,6 +237,7 @@
             this.btnVijf.Name = "btnVijf";
             this.btnVijf.Size = new System.Drawing.Size(90, 45);
             this.btnVijf.TabIndex = 46;
+            this.btnVijf.TabStop = false;
             this.btnVijf.Text = "5";
             this.btnVijf.UseVisualStyleBackColor = false;
             this.btnVijf.Click += new System.EventHandler(this.btn_click);
@@ -237,6 +250,7 @@
             this.btnVier.Name = "btnVier";
             this.btnVier.Size = new System.Drawing.Size(90, 45);
             this.btnVier.TabIndex = 45;
+            this.btnVier.TabStop = false;
             this.btnVier.Text = "4";
             this.btnVier.UseVisualStyleBackColor = false;
             this.btnVier.Click += new System.EventHandler(this.btn_click);
@@ -249,6 +263,7 @@
             this.btnNegen.Name = "btnNegen";
             this.btnNegen.Size = new System.Drawing.Size(90, 45);
             this.btnNegen.TabIndex = 44;
+            this.btnNegen.TabStop = false;
             this.btnNegen.Text = "9";
             this.btnNegen.UseVisualStyleBackColor = false;
             this.btnNegen.Click += new System.EventHandler(this.btn_click);
@@ -261,6 +276,7 @@
             this.btnKeer.Name = "btnKeer";
             this.btnKeer.Size = new System.Drawing.Size(90, 45);
             this.btnKeer.TabIndex = 43;
+            this.btnKeer.TabStop = false;
             this.btnKeer.Text = "x";
             this.btnKeer.UseVisualStyleBackColor = false;
             this.btnKeer.Click += new System.EventHandler(this.btn_commando);
@@ -273,6 +289,7 @@
             this.btnAcht.Name = "btnAcht";
             this.btnAcht.Size = new System.Drawing.Size(90, 45);
             this.btnAcht.TabIndex = 42;
+            this.btnAcht.TabStop = false;
             this.btnAcht.Text = "8";
             this.btnAcht.UseVisualStyleBackColor = false;
             this.btnAcht.Click += new System.EventHandler(this.btn_click);
@@ -285,21 +302,23 @@
             this.btnZeven.Name = "btnZeven";
             this.btnZeven.Size = new System.Drawing.Size(90, 45);
             this.btnZeven.TabIndex = 41;
+            this.btnZeven.TabStop = false;
             this.btnZeven.Text = "7";
             this.btnZeven.UseVisualStyleBackColor = false;
             this.btnZeven.Click += new System.EventHandler(this.btn_click);
             // 
-            // btnDerdeMacht
+            // btnProcent
             // 
-            this.btnDerdeMacht.BackColor = System.Drawing.Color.Silver;
-            this.btnDerdeMacht.Font = new System.Drawing.Font("Calibri", 11F);
-            this.btnDerdeMacht.Location = new System.Drawing.Point(238, 99);
-            this.btnDerdeMacht.Name = "btnDerdeMacht";
-            this.btnDerdeMacht.Size = new System.Drawing.Size(90, 45);
-            this.btnDerdeMacht.TabIndex = 40;
-            this.btnDerdeMacht.Text = "x³";
-            this.btnDerdeMacht.UseVisualStyleBackColor = false;
-            this.btnDerdeMacht.Click += new System.EventHandler(this.btn_commandoDerdeMacht);
+            this.btnProcent.BackColor = System.Drawing.Color.Silver;
+            this.btnProcent.Font = new System.Drawing.Font("Calibri", 11F);
+            this.btnProcent.Location = new System.Drawing.Point(334, 99);
+            this.btnProcent.Name = "btnProcent";
+            this.btnProcent.Size = new System.Drawing.Size(90, 45);
+            this.btnProcent.TabIndex = 40;
+            this.btnProcent.TabStop = false;
+            this.btnProcent.Text = "%";
+            this.btnProcent.UseVisualStyleBackColor = false;
+            this.btnProcent.Click += new System.EventHandler(this.btnProcentClick);
             // 
             // btnGedeeldDoor
             // 
@@ -309,6 +328,7 @@
             this.btnGedeeldDoor.Name = "btnGedeeldDoor";
             this.btnGedeeldDoor.Size = new System.Drawing.Size(90, 45);
             this.btnGedeeldDoor.TabIndex = 39;
+            this.btnGedeeldDoor.TabStop = false;
             this.btnGedeeldDoor.Text = "÷";
             this.btnGedeeldDoor.UseVisualStyleBackColor = false;
             this.btnGedeeldDoor.Click += new System.EventHandler(this.btn_commando);
@@ -321,6 +341,7 @@
             this.btnKwadraat.Name = "btnKwadraat";
             this.btnKwadraat.Size = new System.Drawing.Size(90, 45);
             this.btnKwadraat.TabIndex = 38;
+            this.btnKwadraat.TabStop = false;
             this.btnKwadraat.Text = "x²";
             this.btnKwadraat.UseVisualStyleBackColor = false;
             this.btnKwadraat.Click += new System.EventHandler(this.btn_commandoKwadraat);
@@ -329,10 +350,12 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.Silver;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11F);
+            this.btnClear.ForeColor = System.Drawing.Color.DarkRed;
             this.btnClear.Location = new System.Drawing.Point(46, 99);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 45);
             this.btnClear.TabIndex = 37;
+            this.btnClear.TabStop = false;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.clear_click);
@@ -345,6 +368,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 45);
             this.button1.TabIndex = 64;
+            this.button1.TabStop = false;
             this.button1.Text = "π";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btn_click_pi);
@@ -358,6 +382,7 @@
             this.btnMemoryMinus.Name = "btnMemoryMinus";
             this.btnMemoryMinus.Size = new System.Drawing.Size(90, 45);
             this.btnMemoryMinus.TabIndex = 62;
+            this.btnMemoryMinus.TabStop = false;
             this.btnMemoryMinus.Text = "M -";
             this.btnMemoryMinus.UseVisualStyleBackColor = false;
             this.btnMemoryMinus.Click += new System.EventHandler(this.btn_commando_memory);
@@ -371,6 +396,7 @@
             this.btnMemoryPlus.Name = "btnMemoryPlus";
             this.btnMemoryPlus.Size = new System.Drawing.Size(90, 45);
             this.btnMemoryPlus.TabIndex = 61;
+            this.btnMemoryPlus.TabStop = false;
             this.btnMemoryPlus.Text = "M +";
             this.btnMemoryPlus.UseVisualStyleBackColor = false;
             this.btnMemoryPlus.Click += new System.EventHandler(this.btn_commando_memory);
@@ -384,6 +410,7 @@
             this.btnMemoryStore.Name = "btnMemoryStore";
             this.btnMemoryStore.Size = new System.Drawing.Size(90, 45);
             this.btnMemoryStore.TabIndex = 60;
+            this.btnMemoryStore.TabStop = false;
             this.btnMemoryStore.Text = "M Store";
             this.btnMemoryStore.UseVisualStyleBackColor = false;
             this.btnMemoryStore.Click += new System.EventHandler(this.btn_commando_memory);
@@ -397,6 +424,7 @@
             this.btnMemoryClear.Name = "btnMemoryClear";
             this.btnMemoryClear.Size = new System.Drawing.Size(90, 45);
             this.btnMemoryClear.TabIndex = 65;
+            this.btnMemoryClear.TabStop = false;
             this.btnMemoryClear.Text = "M Clear";
             this.btnMemoryClear.UseVisualStyleBackColor = false;
             this.btnMemoryClear.Click += new System.EventHandler(this.btn_commando_memory);
@@ -409,6 +437,7 @@
             this.btnFactorial.Name = "btnFactorial";
             this.btnFactorial.Size = new System.Drawing.Size(90, 45);
             this.btnFactorial.TabIndex = 66;
+            this.btnFactorial.TabStop = false;
             this.btnFactorial.Text = "1 / x";
             this.btnFactorial.UseVisualStyleBackColor = false;
             this.btnFactorial.Click += new System.EventHandler(this.btn_commando_een_gedeeld_door_x);
@@ -421,6 +450,7 @@
             this.btnEuroTeken.Name = "btnEuroTeken";
             this.btnEuroTeken.Size = new System.Drawing.Size(90, 45);
             this.btnEuroTeken.TabIndex = 67;
+            this.btnEuroTeken.TabStop = false;
             this.btnEuroTeken.Text = "€";
             this.btnEuroTeken.UseVisualStyleBackColor = false;
             this.btnEuroTeken.Click += new System.EventHandler(this.btnEuroClick);
@@ -434,6 +464,7 @@
             this.btnMemoryRecall.Name = "btnMemoryRecall";
             this.btnMemoryRecall.Size = new System.Drawing.Size(90, 45);
             this.btnMemoryRecall.TabIndex = 68;
+            this.btnMemoryRecall.TabStop = false;
             this.btnMemoryRecall.Text = "M Recall";
             this.btnMemoryRecall.UseVisualStyleBackColor = false;
             this.btnMemoryRecall.Click += new System.EventHandler(this.btn_commando_memory);
@@ -447,6 +478,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 46);
             this.button2.TabIndex = 69;
+            this.button2.TabStop = false;
             this.button2.Text = "Prime Number";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btn_commando_test_for_prime);
@@ -462,8 +494,9 @@
             this.textUitvoerPrime.Multiline = true;
             this.textUitvoerPrime.Name = "textUitvoerPrime";
             this.textUitvoerPrime.ReadOnly = true;
-            this.textUitvoerPrime.Size = new System.Drawing.Size(201, 45);
+            this.textUitvoerPrime.Size = new System.Drawing.Size(213, 45);
             this.textUitvoerPrime.TabIndex = 70;
+            this.textUitvoerPrime.TabStop = false;
             this.textUitvoerPrime.TextChanged += new System.EventHandler(this.textUitvoerPrime_TextChanged);
             // 
             // textUitvoerMemory
@@ -477,8 +510,9 @@
             this.textUitvoerMemory.Multiline = true;
             this.textUitvoerMemory.Name = "textUitvoerMemory";
             this.textUitvoerMemory.ReadOnly = true;
-            this.textUitvoerMemory.Size = new System.Drawing.Size(201, 44);
+            this.textUitvoerMemory.Size = new System.Drawing.Size(213, 44);
             this.textUitvoerMemory.TabIndex = 71;
+            this.textUitvoerMemory.TabStop = false;
             this.textUitvoerMemory.TextChanged += new System.EventHandler(this.textUitvoerMemory_TextChanged);
             // 
             // textUitvoerFibonacci
@@ -492,8 +526,9 @@
             this.textUitvoerFibonacci.Multiline = true;
             this.textUitvoerFibonacci.Name = "textUitvoerFibonacci";
             this.textUitvoerFibonacci.ReadOnly = true;
-            this.textUitvoerFibonacci.Size = new System.Drawing.Size(201, 45);
+            this.textUitvoerFibonacci.Size = new System.Drawing.Size(213, 45);
             this.textUitvoerFibonacci.TabIndex = 72;
+            this.textUitvoerFibonacci.TabStop = false;
             this.textUitvoerFibonacci.TextChanged += new System.EventHandler(this.textUitvoerFibonacci_TextChanged);
             // 
             // btnFibonacci
@@ -505,6 +540,7 @@
             this.btnFibonacci.Name = "btnFibonacci";
             this.btnFibonacci.Size = new System.Drawing.Size(158, 45);
             this.btnFibonacci.TabIndex = 73;
+            this.btnFibonacci.TabStop = false;
             this.btnFibonacci.Text = "Fibonacci Number";
             this.btnFibonacci.UseVisualStyleBackColor = false;
             this.btnFibonacci.Click += new System.EventHandler(this.btn_commando_test_for_fibonacci);
@@ -520,14 +556,33 @@
             this.textUitvoerHuidigeBerekening.Multiline = true;
             this.textUitvoerHuidigeBerekening.Name = "textUitvoerHuidigeBerekening";
             this.textUitvoerHuidigeBerekening.ReadOnly = true;
-            this.textUitvoerHuidigeBerekening.Size = new System.Drawing.Size(218, 109);
+            this.textUitvoerHuidigeBerekening.Size = new System.Drawing.Size(213, 60);
             this.textUitvoerHuidigeBerekening.TabIndex = 74;
+            this.textUitvoerHuidigeBerekening.TabStop = false;
+            this.textUitvoerHuidigeBerekening.TextChanged += new System.EventHandler(this.textUitvoerHuidigeBerekening_TextChanged);
+            // 
+            // textUitvoerClear
+            // 
+            this.textUitvoerClear.BackColor = System.Drawing.SystemColors.Control;
+            this.textUitvoerClear.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUitvoerClear.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textUitvoerClear.Enabled = false;
+            this.textUitvoerClear.Font = new System.Drawing.Font("Calibri", 8F);
+            this.textUitvoerClear.ForeColor = System.Drawing.Color.DarkRed;
+            this.textUitvoerClear.Location = new System.Drawing.Point(526, 101);
+            this.textUitvoerClear.Multiline = true;
+            this.textUitvoerClear.Name = "textUitvoerClear";
+            this.textUitvoerClear.ReadOnly = true;
+            this.textUitvoerClear.Size = new System.Drawing.Size(213, 43);
+            this.textUitvoerClear.TabIndex = 75;
+            this.textUitvoerClear.TabStop = false;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 446);
+            this.ClientSize = new System.Drawing.Size(742, 446);
+            this.Controls.Add(this.textUitvoerClear);
             this.Controls.Add(this.textUitvoerFibonacci);
             this.Controls.Add(this.btnFibonacci);
             this.Controls.Add(this.button2);
@@ -560,7 +615,7 @@
             this.Controls.Add(this.btnKeer);
             this.Controls.Add(this.btnAcht);
             this.Controls.Add(this.btnZeven);
-            this.Controls.Add(this.btnDerdeMacht);
+            this.Controls.Add(this.btnProcent);
             this.Controls.Add(this.btnGedeeldDoor);
             this.Controls.Add(this.btnKwadraat);
             this.Controls.Add(this.btnClear);
@@ -597,7 +652,7 @@
         private System.Windows.Forms.Button btnKeer;
         private System.Windows.Forms.Button btnAcht;
         private System.Windows.Forms.Button btnZeven;
-        private System.Windows.Forms.Button btnDerdeMacht;
+        private System.Windows.Forms.Button btnProcent;
         private System.Windows.Forms.Button btnGedeeldDoor;
         private System.Windows.Forms.Button btnKwadraat;
         private System.Windows.Forms.Button btnClear;
@@ -615,6 +670,7 @@
         private System.Windows.Forms.TextBox textUitvoerFibonacci;
         private System.Windows.Forms.Button btnFibonacci;
         private System.Windows.Forms.TextBox textUitvoerHuidigeBerekening;
+        private System.Windows.Forms.TextBox textUitvoerClear;
     }
 }
 
