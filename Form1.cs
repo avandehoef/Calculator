@@ -46,7 +46,7 @@ namespace WindowsFormsApp6
             
             string geenText = textUitvoerClear.Text;
             var backgroundWorker = new BackgroundWorker();
-            backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
+            backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
             backgroundWorker.RunWorkerCompleted += (s, ea) =>
             {
             textUitvoerClear.Text = geenText;
@@ -195,7 +195,7 @@ namespace WindowsFormsApp6
 
                     string geenText = textUitvoerMemory.Text;
                     var backgroundWorker = new BackgroundWorker();
-                    backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(3));
+                    backgroundWorker.DoWork += (s, ea) => System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
                     backgroundWorker.RunWorkerCompleted += (s, ea) =>
                     {
                         textUitvoerMemory.Text = geenText;
@@ -217,7 +217,6 @@ namespace WindowsFormsApp6
                 default:
                     break;
             }
-
         }
 
         private void btn_click_pi(object sender, EventArgs e)
@@ -235,6 +234,22 @@ namespace WindowsFormsApp6
             {
                 textUitvoer.Text = textUitvoer.Text + Convert.ToString(Math.PI);
             }
+        }
+
+        private void btnProcentClick(object sender, EventArgs e)
+        {
+            if
+            ((textUitvoer.Text == "0") || (opCommandoGeclicked))
+                textUitvoer.Clear();
+
+            double resultaatProcent = 0;
+            resultaatProcent = double.Parse(textUitvoer.Text);
+
+            opCommandoGeclicked = false;
+
+            Button button = (Button)sender;
+            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + " " + resultaatProcent + "%  =";
+            textUitvoer.Text = Convert.ToString(resultaat * resultaatProcent / 100);
         }
 
         private void btnEuroClick(object sender, EventArgs e)
@@ -422,23 +437,6 @@ namespace WindowsFormsApp6
         private void textUitvoerHuidigeBerekening_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnProcentClick(object sender, EventArgs e)
-        {
-            if
-            ((textUitvoer.Text == "0") || (opCommandoGeclicked))
-                textUitvoer.Clear();
-
-            double resultaatProcent = 0;
-            resultaatProcent = double.Parse(textUitvoer.Text);
-
-            opCommandoGeclicked = false;
-
-            Button button = (Button)sender;
-            textUitvoerHuidigeBerekening.Text = resultaat + " " + uitvoeren + " " + resultaatProcent + "%  =";
-            textUitvoer.Text = Convert.ToString(resultaat * resultaatProcent/100);
-
-        }      
+        }                
     }
 }
